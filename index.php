@@ -41,6 +41,17 @@ switch ($metodo){
         $performance = isset($_GET['peformance']) ? $_GET['peformance'] : null;
         $protagonista = isset($_GET['protagonista']) ? $_GET['protagonista'] : null;
         
+        echo $hash;
+        echo $id_pessoa;
+        echo $id_demanda;
+        echo $asas;
+        echo $fala;
+        echo $garra;
+        echo $inquietacao;
+        echo $relacao;
+        echo $performance;
+        echo $protagonista;
+                
         break;
 }
         

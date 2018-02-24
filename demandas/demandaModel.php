@@ -24,15 +24,16 @@ class demandaModel {
     }
     
     private function listarPessoasDemanda($id_demanda){
-        $result = $this->conexao->query("select distinct id_pessoa,nome_pessoa from demandas_pessoas "
+        $result = $this->conexao->query("select distinct id_pessoa from demandas_pessoas "
                 . "join pessoas using(id_pessoa) where id_demanda = {$id_demanda}");
         return json_encode(mysqli_fetch_all($result,MYSQLI_ASSOC));
         
     }
     
     private function DemandaFoiAvaliada($id_demanda){
-        $result = $this->conexao->query("select * from demandas_avaliacoes where id_demanda = {$id_demanda}");
-        return mysqli_num_rows($result) >0 ? true: false;
+        $result = $this->conexao->query("select id_avaliacao from demandas_avaliacoes where id_demanda = {$id_demanda}");
+//        return mysqli_num_rows($result) >0 ? true: false;
+        return json_encode(mysqli_fetch_all($result,MYSQLI_ASSOC));
     }
     
     public function listarPorId($id_demanda){

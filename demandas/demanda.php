@@ -56,9 +56,9 @@ class demanda {
     function toJson(){
         return array(
             "id_demanda" => $this->getId(),
-            'descricao' => $this->getDescricao(),
+            'descricao_demanda' => $this->getDescricao(),
             'pessoas' => $this->getPessoas_demanda(),
-            'avaliado' => $this->getAvaliado()
+            'avaliacoes' => $this->getAvaliado()
         );
     }
 

@@ -17,7 +17,7 @@ $autenticador =  new pessoaController();
 
 $avaliador = $autenticador->getAvaliador($hash);
 if(!$avaliador){
-   die(json_encode(array("mensagem" => "Avaliador nao cadastrado no sistema"))); 
+   die(json_encode(array("erro" => "Avaliador nao cadastrado no sistema"))); 
 };
 switch ($metodo){
     case 'lista_demandas':
@@ -31,6 +31,15 @@ switch ($metodo){
         echo $json;
         break;
     case 'insere_avaliacao':
+        $id_pessoa = isset($_GET['id_pessoa']) ? $_GET['id_pessoa'] : null;         
+        $id_demanda = isset($_GET['id_demanda']) ? $_GET['id_demanda'] : null;  
+        $asas = isset($_GET['assas']) ?  $_GET['assas'] : null;
+        $fala = isset( $_GET['fala'] ) ? $_GET['fala'] : null;
+        $garra = isset( $_GET['garra']) ?  $_GET['garra'] : null;
+        $inquietacao = isset( $_GET['inquietacao']) ? $_GET['inquietacao'] : null;
+        $relacao = isset($_GET['relacao']) ? $_GET['relacao'] : null;
+        $performance = isset($_GET['peformance']) ? $_GET['peformance'] : null;
+        $protagonista = isset($_GET['protagonista']) ? $_GET['protagonista'] : null;
         
         break;
 }
